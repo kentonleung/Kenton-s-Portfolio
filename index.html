@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kenton Leung | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-top">
+      <a class="logo" href="#">Kenton Leung</a>
+      <nav class="site-nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="container hero-copy">
+      <p class="eyebrow">Hello, I’m</p>
+      <h1>Kenton Leung</h1>
+      <p class="headline">I build impactful digital products across web development, robotics, and wearable devices.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#projects">View Projects</a>
+        <a class="button secondary" href="#contact">Contact Me</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about" class="card section-row">
+      <div>
+        <h2>About Me</h2>
+        <p>I’m a full-stack developer and engineering designer with experience in website revitalization, medical robotics simulation, wearable sensing systems, and embedded firmware.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat">
+          <strong>7+</strong>
+          <span>Projects Documented</span>
+        </div>
+        <div class="stat">
+          <strong>Web & Systems</strong>
+          <span>Full Stack, Hardware, AI, UX</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section-row">
+      <div class="section-heading">
+        <h2>Featured Projects</h2>
+        <p>Seven highlighted projects spanning web development, robotics, wearables, and motion systems.</p>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card">
+          <a class="project-card-link" href="projects/unlimit-hosting.html">
+            <img class="project-image" src="ppt_images/slide1_shape1.png" alt="Unlimit Hosting website redesign" />
+            <div class="project-card-content">
+              <h3>Unlimit Hosting Revamp</h3>
+              <p>Modernized a long-running hosting provider with AI utilities, service plan clarity, and stronger security.</p>
+              <div class="project-meta">
+                <span>Full Stack</span>
+                <span>Web</span>
+                <span>API</span>
+              </div>
+            </div>
+          </a>
+          <div class="project-actions">
+            <a href="https://www.unlimit-hosting.com/" target="_blank" rel="noreferrer">Live site</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <a class="project-card-link" href="projects/image-guided-navigation.html">
+            <img class="project-image" src="ppt_images/slide3_shape3.png" alt="Image-guided navigation simulation" />
+            <div class="project-card-content">
+              <h3>Image-Guided Navigation</h3>
+              <p>Simulation pipeline for surgical robotics electrode insertion with anatomy-aware safety constraints.</p>
+              <div class="project-meta">
+                <span>Robotics</span>
+                <span>Medical</span>
+                <span>Simulation</span>
+              </div>
+            </div>
+          </a>
+        </article>
+        <article class="project-card">
+          <a class="project-card-link" href="projects/low-cost-smart-insole.html">
+            <img class="project-image" src="ppt_images/slide4_shape2.jpg" alt="Low-cost smart insole prototype" />
+            <div class="project-card-content">
+              <h3>Low-Cost Smart Insole</h3>
+              <p>Wearable sensor prototype for physical activity monitoring and gait event classification.</p>
+              <div class="project-meta">
+                <span>Wearable</span>
+                <span>Sensors</span>
+                <span>Embedded</span>
+              </div>
+            </div>
+          </a>
+          <div class="project-actions">
+            <a href="https://github.com/kentonleung/Low-cost-Smart-Insole" target="_blank" rel="noreferrer">View repo</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <a class="project-card-link" href="projects/smart-knee-sleeve.html">
+            <img class="project-image" src="ppt_images/slide6_shape2.png" alt="Smart knee sleeve design" />
+            <div class="project-card-content">
+              <h3>Smart Knee Sleeve</h3>
+              <p>IMU-based knee wearable with wireless logging and Grafana dashboards for motion tracking.</p>
+              <div class="project-meta">
+                <span>Wearable</span>
+                <span>IoT</span>
+                <span>Analytics</span>
+              </div>
+            </div>
+          </a>
+          <div class="project-actions">
+            <a href="https://github.com/kentonleung/Knee-Sleeve" target="_blank" rel="noreferrer">View repo</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <a class="project-card-link" href="projects/parallel-drawing-robot.html">
+            <img class="project-image" src="ppt_images/slide8_shape4.png" alt="Parallel drawing robot" />
+            <div class="project-card-content">
+              <h3>Parallel Drawing Robot</h3>
+              <p>Two-motor drawing robot with MATLAB control, firmware, and encoder feedback for accurate path execution.</p>
+              <div class="project-meta">
+                <span>Mechatronics</span>
+                <span>Control</span>
+                <span>Firmware</span>
+              </div>
+            </div>
+          </a>
+          <div class="project-actions">
+            <a href="https://github.com/Lucas-G-Xu/Applied-Medical-Robotics-Group-8" target="_blank" rel="noreferrer">View repo</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <a class="project-card-link" href="projects/motion-comparison.html">
+            <img class="project-image" src="ppt_images/slide10_shape7.png" alt="Motion comparison system" />
+            <div class="project-card-content">
+              <h3>Motion Comparison System</h3>
+              <p>Comparative motion analysis using depth cameras, pose tracking, and similarity scoring.</p>
+              <div class="project-meta">
+                <span>Computer Vision</span>
+                <span>AI</span>
+                <span>Unity</span>
+              </div>
+            </div>
+          </a>
+        </article>
+        <article class="project-card">
+          <a class="project-card-link" href="projects/finite-elements-heart-model.html">
+            <img class="project-image" src="ppt_images/slide11_shape3.png" alt="Finite elements heart model" />
+            <div class="project-card-content">
+              <h3>Heart Finite Element Model</h3>
+              <p>Finite element simulation of blood velocity and pressure in the heart with mesh fidelity analysis.</p>
+              <div class="project-meta">
+                <span>Simulation</span>
+                <span>FEA</span>
+                <span>Modeling</span>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="card section-row">
+      <div>
+        <h2>Skills</h2>
+        <p>Modern frontend development, responsive layout, UI design, accessibility, animation, performance optimization.</p>
+      </div>
+      <ul class="skills-list">
+        <li>HTML & CSS</li>
+        <li>JavaScript</li>
+        <li>Responsive Design</li>
+        <li>Accessibility</li>
+        <li>Version Control</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section-row contact-card">
+      <h2>Contact</h2>
+      <p>Ready to collaborate or want to know more about my work? Send me a message and let’s talk.</p>
+      <a class="button primary" href="mailto:you@example.com">Email Me</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Kenton Leung. Built with HTML, CSS, and JavaScript.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

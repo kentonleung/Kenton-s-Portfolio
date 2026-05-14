@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image-Guided Navigation | Kenton Leung</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="project-page">
+  <header class="hero">
+    <div class="container hero-top">
+      <a class="logo" href="../index.html">Kenton Leung</a>
+      <nav class="site-nav">
+        <a href="../index.html">Portfolio</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="container hero-copy">
+      <p class="eyebrow">Project</p>
+      <h1>Image-Guided Navigation Simulation</h1>
+      <p class="headline">Developed a surgical robotics simulation pipeline for safe electrode insertion to the hippocampus.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="../index.html">Back to Portfolio</a>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <section class="project-detail">
+      <div class="project-copy card">
+        <h2>Overview</h2>
+        <p>This simulation establishes an end-to-end workflow for planning and validating an electrode trajectory through brain anatomy.</p>
+        <h3>Approach</h3>
+        <ul>
+          <li>Path planning in 3D Slicer.</li>
+          <li>OpenIGTLink data transfer into ROS2.</li>
+          <li>Trajectory constraints to avoid ventricles, vessels and cortex deflection.</li>
+        </ul>
+        <h3>Outcome</h3>
+        <p>Calculated and visualized safe electrode trajectories while meeting hard and soft safety constraints for surgical navigation.</p>
+      </div>
+      <aside class="project-sidebar">
+        <div class="card">
+          <h2>Role</h2>
+          <p>Simulation design, medical robotics integration, and safety-aware path planning.</p>
+        </div>
+        <div class="card">
+          <h2>Key constraints</h2>
+          <ul class="project-links">
+            <li>Target hippocampus precisely</li>
+            <li>Avoid ventricles and blood vessels</li>
+            <li>Maintain penetration angle above 55°</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+    <section class="project-section card">
+      <h2>Project visuals</h2>
+      <img src="../ppt_images/slide3_shape3.png" alt="Surgical navigation simulation" />
+    </section>
+  </main>
+  <footer class="footer">
+    <p>© 2026 Kenton Leung. Built with HTML, CSS, and JavaScript.</p>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

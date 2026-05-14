@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parallel Drawing Robot | Kenton Leung</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="project-page">
+  <header class="hero">
+    <div class="container hero-top">
+      <a class="logo" href="../index.html">Kenton Leung</a>
+      <nav class="site-nav">
+        <a href="../index.html">Portfolio</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="container hero-copy">
+      <p class="eyebrow">Project</p>
+      <h1>Parallel Drawing Robot</h1>
+      <p class="headline">Built a two-motor drawing robot with MATLAB control, encoder feedback, and UI-based motion commands.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="../index.html">Back to Portfolio</a>
+        <a class="button secondary" href="https://github.com/Lucas-G-Xu/Applied-Medical-Robotics-Group-8" target="_blank" rel="noreferrer">View repo</a>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <section class="project-detail">
+      <div class="project-copy card">
+        <h2>Overview</h2>
+        <p>Designed a drawing robot controlled by MATLAB, with firmware, motor control, and a graphical user interface for motion input.</p>
+        <h3>Approach</h3>
+        <ul>
+          <li>MATLAB UI sends desired coordinates to an Arduino-driven robot.</li>
+          <li>Motors use encoders for position feedback and path execution.</li>
+          <li>Implemented PID tuning and collision detection using current monitoring.</li>
+        </ul>
+        <h3>Outcome</h3>
+        <p>The robot could draw shapes like squares and respond to commanded positions. Noise and current sensing were used to explore collision thresholds.</p>
+      </div>
+      <aside class="project-sidebar">
+        <div class="card">
+          <h2>Role</h2>
+          <p>Electronics, firmware, and UI integration for robotics control.</p>
+        </div>
+        <div class="card">
+          <h2>Notes</h2>
+          <ul class="project-links">
+            <li>MATLAB–Arduino communication</li>
+            <li>Encoder-driven motor control</li>
+            <li>Current-based collision detection</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+    <section class="project-section card">
+      <h2>Project visuals</h2>
+      <img src="../ppt_images/slide8_shape4.png" alt="Drawing robot schematic" />
+    </section>
+  </main>
+  <footer class="footer">
+    <p>© 2026 Kenton Leung. Built with HTML, CSS, and JavaScript.</p>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>
