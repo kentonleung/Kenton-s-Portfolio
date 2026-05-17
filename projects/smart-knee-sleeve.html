@@ -7,55 +7,120 @@
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body class="project-page">
-  <header class="hero">
-    <div class="container hero-top">
-      <a class="logo" href="../index.html">Kenton Leung</a>
-      <nav class="site-nav">
-        <a href="../index.html">Portfolio</a>
-        <a href="../index.html#projects">Projects</a>
-        <a href="../index.html#contact">Contact</a>
-      </nav>
-    </div>
-    <div class="container hero-copy">
+  <header class="site-header">
+    <div class="site-brand"><a href="../index.html" style="color: inherit; text-decoration: none;">KL</a></div>
+    <nav class="site-nav">
+      <a href="../index.html">Portfolio</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+  <main class="container">
+    <div style="margin-top: 6rem; margin-bottom: 4rem; max-width: 800px;">
       <p class="eyebrow">Project</p>
       <h1>Smart Knee Sleeve</h1>
-      <p class="headline">Built a wearable knee sleeve with IMU sensing, wireless data logging, and biomechanical analysis dashboards.</p>
-      <div class="hero-actions">
-        <a class="button primary" href="../index.html">Back to Portfolio</a>
+      <p class="headline">Collaborated in an engineering group to build a low-cost, IoT-enabled wearable knee sleeve, leading the knee unit mechatronics, clinical testing, and a solo FreeRTOS software upgrade.</p>
+      <div class="hero-actions" style="margin-top: 2rem;">
         <a class="button secondary" href="https://github.com/kentonleung/Knee-Sleeve" target="_blank" rel="noreferrer">View repo</a>
       </div>
     </div>
-  </header>
-  <main class="container">
-    <section class="project-detail">
-      <div class="project-copy card">
-        <h2>Overview</h2>
-        <p>Developed a knee sleeve system using ESP32 and BNO055 IMUs to capture knee angle, stride, and gait metrics with wireless visualization.</p>
-        <h3>Features</h3>
-        <ul>
-          <li>IMU-based motion tracking and wireless logging.</li>
-          <li>Grafana dashboards for live visualization.</li>
-          <li>Biomechanical accuracy evaluation against gait lab data.</li>
-        </ul>
-      </div>
-      <aside class="project-sidebar">
-        <div class="card">
-          <h2>Role</h2>
-          <p>Electronics, firmware, and testing lead for wearable biomechanics.</p>
+    
+    <section class="project-snapshot">
+      <h3>Project Snapshot</h3>
+      <ul>
+        <li><strong>Role:</strong> Mechatronics, Firmware, and Testing (Group Project)</li>
+        <li><strong>Hardware Stack:</strong> Distributed ESP32 Architecture (Knee & Shoe Units), BNO055 IMUs, I2C</li>
+        <li><strong>Software Stack:</strong> C++, FreeRTOS, LittleFS, MQTT, Node-RED, InfluxDB, Grafana</li>
+        <li><strong>Key Outcome:</strong> Co-developed a £133 clinical knee monitor (180% cheaper than market alternatives). Spearheaded the mechatronics and executed a solo software overhaul post-testing, delivering a dual-core RTOS architecture with zero-data-loss network resilience.</li>
+      </ul>
+      <hr style="margin: 2rem 0; border: none; border-top: 1px solid #ccc;" />
+    </section>
+
+    <section class="presentation-sections">
+      
+      <article class="presentation-section">
+        <div class="presentation-visual">
+          <img src="../ppt_images/slide6_shape2.png" alt="Wearable knee sleeve showing ESP32 microcontroller and BNO055 IMU placement" loading="lazy" style="transform: rotate(90deg);" />
         </div>
-        <div class="card">
-          <h2>Key results</h2>
-          <ul class="project-links">
-            <li>Wireless knee angle and stride metrics</li>
-            <li>Grafana visualization of motion data</li>
-            <li>Device accuracy compared to lab ground truth</li>
+        <div class="presentation-content">
+          <h3>Team Hardware Design: A Distributed System</h3>
+          <p>Osteoarthritis (OA) and post-Total Knee Replacement (TKR) patients require long-term gait monitoring, but commercial instrumented sleeves cost upwards of £375. As a group, we divided the research to design a highly affordable, non-invasive alternative.</p>
+          <p>Instead of routing all sensors to a bulky central hub, the team designed a <strong>distributed embedded system</strong> featuring two distinct nodes: a <strong>Knee Unit</strong> and a <strong>Shoe Unit</strong>, each powered by its own ESP32 microcontroller and independent battery pack. Three Adafruit BNO055 IMUs were distributed across the thigh, shin, and shoe.</p>
+          <p>Within this architecture, I took primary ownership of the <strong>Knee Unit mechatronics</strong>. I wired and integrated the thigh and shin IMUs via I2C to the knee's localized ESP32 to capture complex Euler angles for real-time knee flexion calculation.</p>
+        </div>
+      </article>
+
+      <article class="presentation-section">
+        <div class="presentation-visual">
+          <img src="../ppt_images/slide6_shape3.png" alt="IoT data pipeline showing MQTT, Node-RED, InfluxDB, and Grafana integration" loading="lazy" />
+        </div>
+        <div class="presentation-content">
+          <h3>Team IoT Architecture & Telemetry</h3>
+          <p>To enable remote clinical observation, the team engineered an end-to-end telemetry pipeline.</p>
+          <ul>
+            <li><strong>Transmission & Routing:</strong> A teammate led the setup of the wireless transmission, establishing a lightweight <strong>MQTT protocol</strong> broadcast that a <strong>Node-RED</strong> bridge routed directly into a time-series <strong>InfluxDB</strong> database.</li>
+            <li><strong>Visualization:</strong> This pipeline successfully fed a custom, web-based <strong>Grafana</strong> dashboard displaying knee flexion angles, stride length, and cadence in real-time.</li>
           </ul>
         </div>
-      </aside>
-    </section>
-    <section class="project-section card">
-      <h2>Project visuals</h2>
-      <img src="../ppt_images/slide6_shape2.png" alt="Smart knee sleeve system" />
+      </article>
+
+      <article class="presentation-section">
+        <div class="presentation-visual">
+          <img src="../ppt_images/slide6_shape4.png" alt="Clinical gait lab data showing out-of-sync maxima and minima compared to ground truth" loading="lazy" />
+        </div>
+        <div class="presentation-content">
+          <h3>Clinical Validation Testing (My Role)</h3>
+          <p>I was heavily responsible for the system's testing and validation. I led the evaluation against gold-standard Vicon Nexus optical tracking in a clinical gait laboratory. While the general gait curve was captured, my testing revealed critical system flaws:</p>
+          <ul>
+            <li><strong>Flexion Accuracy:</strong> The system showed a -13.94° mean bias and a 17.50° RMSE.</li>
+            <li><strong>The Timing Bottleneck:</strong> Spatiotemporal metrics (like cadence and stride length) exhibited massive errors (>20%). Through rigorous debugging, I identified that the linear Arduino code loop was the culprit. Even though I didn't build the original network pipeline, I deeply understood its architecture, allowing me to diagnose that the blocking nature of the Wi-Fi/MQTT transmission was causing system latency, delaying the IMU sensor polling and ruining the time-series accuracy.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="presentation-section">
+        
+        <div class="presentation-visual" style="background-color: #1a1a2e; padding: 2rem; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #e0e0e0; font-family: sans-serif; min-height: 300px; box-shadow: inset 0 0 10px rgba(0,0,0,0.3);">
+          
+          <div style="margin-bottom: 1.5rem; font-weight: bold; letter-spacing: 1px; color: #4db8ff; text-transform: uppercase; font-size: 0.9rem; text-align: center;">
+            ESP32 Dual-Core RTOS Architecture
+          </div>
+          
+          <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 450px; gap: 1rem;">
+            
+            <div style="flex: 1; border: 2px solid #ff4d4d; border-radius: 6px; padding: 1rem; background-color: rgba(255, 77, 77, 0.05); text-align: center;">
+              <div style="font-size: 0.85rem; color: #ff4d4d; font-weight: bold; margin-bottom: 0.8rem;">CORE 1</div>
+              <div style="background-color: #2a2a4a; padding: 0.5rem; border-radius: 4px; margin-bottom: 0.5rem; font-size: 0.75rem; border: 1px solid #3a3a5a;">BNO055 Polling (50Hz)</div>
+              <div style="font-size: 1rem; margin-bottom: 0.5rem; color: #888;">↓</div>
+              <div style="background-color: #2a2a4a; padding: 0.5rem; border-radius: 4px; font-size: 0.75rem; border: 1px solid #3a3a5a;">Medical Zeroing Math</div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 70px;">
+              <div style="font-size: 0.65rem; color: #aaa; text-transform: uppercase; letter-spacing: 1px; text-align: center; margin-bottom: 5px;">FreeRTOS<br>Queue</div>
+              <div style="font-size: 1.5rem; color: #4db8ff; line-height: 1;">→</div>
+            </div>
+
+            <div style="flex: 1; border: 2px solid #4db8ff; border-radius: 6px; padding: 1rem; background-color: rgba(77, 184, 255, 0.05); text-align: center;">
+              <div style="font-size: 0.85rem; color: #4db8ff; font-weight: bold; margin-bottom: 0.8rem;">CORE 0</div>
+              <div style="background-color: #2a2a4a; padding: 0.5rem; border-radius: 4px; margin-bottom: 0.5rem; font-size: 0.75rem; border: 1px solid #3a3a5a;">LittleFS Offline Buffer</div>
+              <div style="font-size: 1rem; margin-bottom: 0.5rem; color: #888;">↓</div>
+              <div style="background-color: #2a2a4a; padding: 0.5rem; border-radius: 4px; font-size: 0.75rem; border: 1px solid #3a3a5a;">MQTT / Wi-Fi Sync</div>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="presentation-content">
+          <h3>Software Fix: RTOS & Network Resilience</h3>
+          <p>Following the clinical tests, I took solo ownership of the codebase to eliminate the network-blocking latency and ensure true clinical reliability. I completely re-architected the Knee Unit's firmware using <strong>FreeRTOS</strong> and <strong>LittleFS</strong>.</p>
+          <ul>
+            <li><strong>Task Decoupling:</strong> Pinned the high-speed IMU sensor polling (50Hz) and "medical zeroing" mathematics entirely to <strong>Core 1</strong>. The volatile Wi-Fi/MQTT connection management was isolated to <strong>Core 0</strong>, ensuring network drops never delay physical sensor reads.</li>
+            <li><strong>Zero-Data-Loss Offline Storage:</strong> Engineered a non-blocking reconnect mechanism on Core 0. If the clinical network drops, the system seamlessly redirects the 50Hz sensor stream to the ESP32's internal flash memory to prevent data loss. Upon reconnection, it automatically bulk-publishes the offline backlog to the MQTT broker.</li>
+            <li><strong>Real-Time Safety Alerts:</strong> Added a concurrent safety monitor task on Core 1 that triggers an immediate physical LED warning if the patient exceeds a dangerous 120° medical flexion threshold (e.g., performing a deep squat).</li>
+          </ul>
+        </div>
+      </article>
+      
     </section>
   </main>
   <footer class="footer">

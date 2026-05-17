@@ -7,56 +7,82 @@
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body class="project-page">
-  <header class="hero">
-    <div class="container hero-top">
-      <a class="logo" href="../index.html">Kenton Leung</a>
-      <nav class="site-nav">
-        <a href="../index.html">Portfolio</a>
-        <a href="../index.html#projects">Projects</a>
-        <a href="../index.html#contact">Contact</a>
-      </nav>
-    </div>
-    <div class="container hero-copy">
-      <p class="eyebrow">Project</p>
-      <h1>Image-Guided Navigation Simulation</h1>
-      <p class="headline">Developed a surgical robotics simulation pipeline for safe electrode insertion to the hippocampus.</p>
-      <div class="hero-actions">
-        <a class="button primary" href="../index.html">Back to Portfolio</a>
-      </div>
-    </div>
+  <header class="site-header">
+    <div class="site-brand"><a href="../index.html" style="color: inherit; text-decoration: none;">KL</a></div>
+    <nav class="site-nav">
+      <a href="../index.html">Portfolio</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
   </header>
   <main class="container">
-    <section class="project-detail">
-      <div class="project-copy card">
-        <h2>Overview</h2>
-        <p>This simulation establishes an end-to-end workflow for planning and validating an electrode trajectory through brain anatomy.</p>
-        <h3>Approach</h3>
-        <ul>
-          <li>Path planning in 3D Slicer.</li>
-          <li>OpenIGTLink data transfer into ROS2.</li>
-          <li>Trajectory constraints to avoid ventricles, vessels and cortex deflection.</li>
-        </ul>
-        <h3>Outcome</h3>
-        <p>Calculated and visualized safe electrode trajectories while meeting hard and soft safety constraints for surgical navigation.</p>
-      </div>
-      <aside class="project-sidebar">
-        <div class="card">
-          <h2>Role</h2>
-          <p>Simulation design, medical robotics integration, and safety-aware path planning.</p>
+    <div style="margin-top: 6rem; margin-bottom: 4rem; max-width: 800px;">
+      <p class="eyebrow">Project</p>
+      <h1>Image-Guided Navigation Simulation (IGNR)</h1>
+      <p class="headline">Engineered an end-to-end surgical robotics simulation pipeline for safe, automated electrode insertion into the hippocampus.</p>
+    </div>
+    
+    <section class="project-snapshot">
+      <h3>Project Snapshot</h3>
+      <ul>
+        <li><strong>Tech Stack:</strong> Python, ROS2 (Ubuntu), 3D Slicer, OpenIGTLink, MoveIt2, URDF, NumPy, VTK, SimpleITK</li>
+        <li><strong>Key Outcome:</strong> Architected a complete IGNR pipeline bridging medical image processing with real-time robotic kinematics, strictly adhering to complex anatomical safety parameters.</li>
+      </ul>
+      <hr style="margin: 2rem 0; border: none; border-top: 1px solid #ccc;" />
+    </section>
+
+    <section class="presentation-sections">
+      <article class="presentation-section">
+        <div class="presentation-visual">
+          <img src="../ppt_images/slide3_shape3.jpg" alt="IGNR sequence overview showing brain segmentation and trajectory planning" loading="lazy" />
         </div>
-        <div class="card">
-          <h2>Key constraints</h2>
-          <ul class="project-links">
-            <li>Target hippocampus precisely</li>
-            <li>Avoid ventricles and blood vessels</li>
-            <li>Maintain penetration angle above 55°</li>
+        <div class="presentation-content">
+          <h3>The Objective: Precision Neurosurgery</h3>
+          <p><strong>Goal:</strong> Automate the path planning and robotic insertion of an electrode into the hippocampus to monitor temporal lobe epilepsy. This required building an end-to-end system that could interpret MRI brain segmentations, calculate a safe physical trajectory, and command a 6-DOF robotic arm to execute the movement in a simulated environment.</p>
+        </div>
+      </article>
+
+      <article class="presentation-section">
+        <div class="presentation-visual">
+          <img src="../ppt_images/slide3_shape4.png" alt="Safety constraint visualization in 3D space" loading="lazy" />
+        </div>
+        <div class="presentation-content">
+          <h3>Algorithmic Path Planning & Safety Constraints</h3>
+          <p>To ensure patient safety, the path planning algorithm (written in Python via 3D Slicer) had to calculate vectors that strictly adhered to specific medical requirements rather than just finding the shortest distance.</p>
+          <ul>
+            <li><strong>Hard Constraints:</strong> The trajectory must successfully target the hippocampus, completely avoid ventricles and blood vessels, and maintain an insertion angle greater than 55° from the cortex to prevent needle deflection.</li>
+            <li><strong>Soft Constraints & Optimization:</strong> To maximize the safety margin, I utilized <strong>Danielsson distance maps</strong> and subdivided the spatial data into <strong>Octrees</strong> for highly efficient collision detection, selecting the trajectory that maximized the distance from all critical structures.</li>
           </ul>
         </div>
-      </aside>
-    </section>
-    <section class="project-section card">
-      <h2>Project visuals</h2>
-      <img src="../ppt_images/slide3_shape3.png" alt="Surgical navigation simulation" />
+      </article>
+
+      <article class="presentation-section">
+        <div class="presentation-visual">
+          <img src="../ppt_images/slide3_shape31.png" alt="Technical architecture and system integration" loading="lazy" />
+        </div>
+        <div class="presentation-content">
+          <h3>System Architecture & Real-Time Integration</h3>
+          <p>Connecting static medical imaging to dynamic robotics required a robust communication bridge.</p>
+          <ul>
+            <li><strong>Data Streaming:</strong> Implemented the <strong>OpenIGTLink</strong> protocol to establish a server/client connection, streaming the calculated trajectory as a linear transform from 3D Slicer directly into the ROS2 environment.</li>
+            <li><strong>Robotic Kinematics:</strong> Designed a custom 6-DOF virtual robot using URDF. Configured the joint limits, collision geometry, and kinematics within <strong>MoveIt2</strong> and RViz to receive the spatial data and execute the planned insertion path.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="presentation-section">
+        <div class="presentation-visual">
+          <img src="../ppt_images/slide3_shape5.png" alt="ROS2 trajectory execution visualization" loading="lazy" />
+        </div>
+        <div class="presentation-content">
+          <h3>Validation & Engineering Insights</h3>
+          <p>The entire pipeline was validated through a rigorous testing framework, including unit tests for coordinate transformations (RAS to IJK) and integration tests for the collision-avoidance algorithms. The results highlighted two key engineering insights for future clinical iterations:</p>
+          <ul>
+            <li><strong>Biological Weighting:</strong> The initial soft constraint weighted vessel and ventricle avoidance equally. However, damaging a blood vessel carries a much higher risk of hemorrhage compared to ventricle damage. Future optimization functions must apply an anatomically informed weighting ratio (e.g., 60/40).</li>
+            <li><strong>Mesh vs. Point Clouds:</strong> Generating continuous meshes from discrete voxel data introduced smoothing inaccuracies at the tissue boundaries. Transitioning the visualization from meshes to raw point clouds will provide higher-resolution collision detection at the microscopic level.</li>
+          </ul>
+        </div>
+      </article>
     </section>
   </main>
   <footer class="footer">

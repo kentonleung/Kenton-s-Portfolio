@@ -7,56 +7,89 @@
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body class="project-page">
-  <header class="hero">
-    <div class="container hero-top">
-      <a class="logo" href="../index.html">Kenton Leung</a>
-      <nav class="site-nav">
-        <a href="../index.html">Portfolio</a>
-        <a href="../index.html#projects">Projects</a>
-        <a href="../index.html#contact">Contact</a>
-      </nav>
-    </div>
-    <div class="container hero-copy">
-      <p class="eyebrow">Project</p>
-      <h1>Heart Finite Element Model</h1>
-      <p class="headline">Simulated blood velocity and pressure in the heart using finite element analysis and mesh fidelity studies.</p>
-      <div class="hero-actions">
-        <a class="button primary" href="../index.html">Back to Portfolio</a>
-      </div>
-    </div>
+  <header class="site-header">
+    <div class="site-brand"><a href="../index.html" style="color: inherit; text-decoration: none;">KL</a></div>
+    <nav class="site-nav">
+      <a href="../index.html">Portfolio</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
   </header>
   <main class="container">
-    <section class="project-detail">
-      <div class="project-copy card">
-        <h2>Overview</h2>
-        <p>This academic model evaluates heart pressure and velocity using discretized finite element methods and convergence analysis.</p>
-        <h3>Approach</h3>
-        <ul>
-          <li>Computed a discretized weak form for blood flow in the heart.</li>
-          <li>Analyzed mesh fidelity and pressure drop across simulated domains.</li>
-          <li>Conducted convergence testing to validate accuracy.</li>
-        </ul>
-        <h3>Outcome</h3>
-        <p>Demonstrated improved accuracy with finer meshes and identified the point of diminishing returns beyond the fifth refinement.</p>
-      </div>
-      <aside class="project-sidebar">
-        <div class="card">
-          <h2>Role</h2>
-          <p>Finite element modeling, simulation analysis, and convergence validation.</p>
+    <div style="margin-top: 6rem; margin-bottom: 4rem; max-width: 800px;">
+      <p class="eyebrow">Project</p>
+      <h1>Heart Finite Element Model</h1>
+      <p class="headline">Finite element simulation of aortic valve stenosis: modeling blood flow, pressure drops, and mesh convergence for treatment insights.</p>
+    </div>
+    
+    <section class="project-snapshot">
+      <h3>Project Snapshot</h3>
+      <ul>
+        <li><strong>Tech Stack:</strong> Finite Element Methods (FEM), Computational Fluid Dynamics (CFD), Navier-Stokes Equations, Newton-Raphson Iteration, Mesh Convergence Analysis</li>
+        <li><strong>Key Outcome:</strong> Engineered a mathematically convergent computational model of aortic valve stenosis capable of accurately predicting critical hemodynamic pressure gradients (~40 mmHg) to aid in personalized surgical treatment planning.</li>
+      </ul>
+      <hr style="margin: 2rem 0; border: none; border-top: 1px solid #ccc;" />
+    </section>
+
+    <section class="presentation-sections">
+      <article class="presentation-section">
+        <div class="presentation-visual">
+          <img src="../ppt_images/slide11_shape2.png" alt="Finite element mesh of stenosed aortic valve showing triangular elements and geometric refinement" loading="lazy" />
         </div>
-        <div class="card">
-          <h2>Key findings</h2>
-          <ul class="project-links">
-            <li>Mesh fidelity impacts pressure drop accuracy</li>
-            <li>2D velocity and pressure modeling</li>
-            <li>Convergence tests showed diminishing returns</li>
+        <div class="presentation-content">
+          <h3>Model Setup & Mesh</h3>
+          <p>Developed a computational model of a stenosed (narrowed) aortic valve using finite element methods (FEM) to simulate blood flow dynamics. Discretized the valve geometry with triangular elements and applied Gauss quadrature integration. Boundary conditions: inlet blood velocity 200 mm/s, stress-free outlet, no-slip walls at valve tissue.</p>
+        </div>
+      </article>
+
+      <article class="presentation-section">
+        <div class="presentation-visual">
+          <img src="../ppt_images/slide11_shape3.png" alt="Velocity field streamlines through stenosed aortic valve showing jet formation and acceleration" loading="lazy" />
+        </div>
+        <div class="presentation-content">
+          <h3>Flow Physics & Velocity Profile</h3>
+          <p>Simulated incompressible Navier-Stokes flow (momentum and continuity equations). Results show high-velocity jet formation through the stenosis opening, with peak velocity exceeding inlet by 5–10×. Observed recirculation zones downstream in the aortic sinuses with lower velocity regions, characteristic of stenotic flow patterns clinically observed in patients.</p>
+        </div>
+      </article>
+
+      <article class="presentation-section">
+        <div class="presentation-visual">
+          <img src="../ppt_images/slide11_shape4.png" alt="Pressure distribution heatmap showing pressure drop across stenosis and pressure recovery in aorta" loading="lazy" />
+        </div>
+        <div class="presentation-content">
+          <h3>Pressure Drop Analysis</h3>
+          <ul>
+            <li><strong>Transvalvular pressure gradient:</strong> Quantified pressure drop across stenosis as a key clinical indicator of stenosis severity.</li>
+            <li><strong>Spatial pressure distribution:</strong> Identified high-pressure zones upstream and low-pressure zones in the jet core.</li>
+            <li><strong>Clinical relevance:</strong> Pressure drop values aligned with known hemodynamic thresholds for symptomatic stenosis (threshold ~40 mmHg).</li>
           </ul>
         </div>
-      </aside>
-    </section>
-    <section class="project-section card">
-      <h2>Project visuals</h2>
-      <img src="../ppt_images/slide11_shape3.png" alt="Heart finite element model" />
+      </article>
+
+      <article class="presentation-section">
+        <div class="presentation-visual">
+          <img src="../ppt_images/slide11_shape5.png" alt="Mesh refinement convergence study showing coarse, medium, and fine mesh element sizes" loading="lazy" />
+        </div>
+        <div class="presentation-content">
+          <h3>Mesh Refinement & Convergence</h3>
+          <p>Conducted systematic mesh refinement from coarse (500 elements) to fine (5000+ elements) to ensure solution accuracy. Solved nonlinear weak formulation using Newton-Raphson iteration with each mesh resolution. Computed RMSE between successive mesh refinement levels to assess convergence.</p>
+        </div>
+      </article>
+
+      <article class="presentation-section">
+        <div class="presentation-visual">
+          <img src="../ppt_images/slide11_shape8.png" alt="Convergence plot showing RMSE decrease with mesh refinement and identification of optimal element size" loading="lazy" />
+        </div>
+        <div class="presentation-content">
+          <h3>Results & Clinical Application</h3>
+          <ul>
+            <li><strong>Convergence behavior:</strong> RMSE decreased asymptotically; optimal mesh identified where computational cost no longer justified accuracy gains.</li>
+            <li><strong>Validated results:</strong> Velocity and pressure fields consistent with experimental stenosis flow data from literature.</li>
+            <li><strong>Clinical value:</strong> Provides surgeons personalized hemodynamic predictions for treatment planning (balloon valvuloplasty patient feasibility).</li>
+            <li><strong>Mesh sensitivity:</strong> Demonstrates critical importance of mesh fidelity near stenosis opening for accurate pressure gradient prediction.</li>
+          </ul>
+        </div>
+      </article>
     </section>
   </main>
   <footer class="footer">

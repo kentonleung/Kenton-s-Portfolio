@@ -3,244 +3,181 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kenton Leung — Creative Developer</title>
+  <title>Kenton Leung — Biomedical Engineer</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="cursor"></div>
-  <div class="cursor-glow"></div>
-
-  <nav class="nav-main">
-    <div class="nav-container">
-      <a href="#" class="nav-logo">KL</a>
-      <div class="nav-links">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#work" class="nav-link">Work</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </div>
-    </div>
-  </nav>
+  <div class="ambient-layer" aria-hidden="true">
+    <span class="ambient-dot dot-a"></span>
+    <span class="ambient-dot dot-b"></span>
+    <span class="ambient-dot dot-c"></span>
+  </div>
+  <header class="site-header">
+    <div class="site-brand">KL</div>
+    <nav class="site-nav">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
   <main>
-    <!-- HERO SECTION -->
     <section class="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1 class="hero-title">Creative developer<br />& engineer</h1>
-          <p class="hero-subtitle">Crafting immersive digital experiences with code, design, and innovation across web, robotics, and wearables.</p>
-          <a href="#work" class="cta-button">Explore Work</a>
-        </div>
-        <div class="hero-visual">
-          <div class="gradient-orb"></div>
+      <div class="hero-copy">
+        <span class="eyebrow">Biomedical Engineering, Mechatronics, Software, Firmware & Web</span>
+        <h1>Building robotics, wearable systems, and clinical software with practical impact.</h1>
+        <p>A fresh MEng Biomedical Engineering graduate from King's College London combining technical depth in embedded systems, biomechanics, and simulation with a drive for execution.</p>
+        <div class="hero-actions">
+          <a href="#work" class="button button-primary">See Work</a>
+          <a href="#contact" class="button button-secondary">Contact Me</a>
         </div>
       </div>
-      <div class="scroll-hint">
-        <span>Scroll to explore</span>
-        <div class="scroll-arrow"></div>
-      </div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section id="about" class="section about-section">
-      <div class="section-container">
-        <div class="about-grid">
-          <div class="about-text">
-            <h2 class="section-title">About me</h2>
-            <p>I'm a full-stack developer and engineering designer with a passion for building products that push boundaries. My work spans website revitalization, medical robotics simulation, wearable sensing systems, and embedded firmware.</p>
-            <p>I believe in creating experiences that are not just functional, but memorable and engaging.</p>
-            <div class="stats">
-              <div class="stat-item">
-                <span class="stat-number">7+</span>
-                <span class="stat-label">Projects</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">5+</span>
-                <span class="stat-label">Years</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">∞</span>
-                <span class="stat-label">Ideas</span>
-              </div>
-            </div>
+      <div class="hero-visual">
+        <div class="hero-card" style="padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px;">
+          <h3 style="margin-top: 0; margin-bottom: 1.2rem; font-size: 1.1rem; color: #fff;">Skills & Toolchain</h3>
+          <div class="skills-grid" style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+            <div class="skill-pill">C++ & Arduino</div>
+            <div class="skill-pill">FreeRTOS</div>
+            <div class="skill-pill">Python</div>
+            <div class="skill-pill">MATLAB</div>
+            <div class="skill-pill">C# & Unity</div>
+            <div class="skill-pill">ROS2</div>
+            <div class="skill-pill">PHP & JavaScript</div>
+            <div class="skill-pill">CAD & 3D Printing</div>
+            <div class="skill-pill">Machine Learning Algorithms</div>
+            <div class="skill-pill">AI-Accelerated Workflows (MCPs, LLM Tooling)</div>
           </div>
-          <div class="about-visual"></div>
         </div>
       </div>
     </section>
 
-    <!-- WORK SECTION -->
-    <section id="work" class="section work-section">
-      <div class="section-container">
-        <h2 class="section-title">Selected Work</h2>
-        <p class="section-subtitle">A selection of projects spanning full-stack development, robotics, and embedded systems.</p>
+    <section id="about" class="section section-about">
+      <div class="section-inner">
+        <div>
+          <h2>About</h2>
+          <p>I design and build medical devices and digital products with a strong engineering foundation. My academic and project experience ranges from surgical navigation and wearable biomechanical sensors to robotics control and hardware simulation.</p>
+          <p>Whether I am writing RTOS firmware for a microcontroller or running finite element simulations, I focus on clear outcomes, reliable execution, and solutions that bridge the gap between theoretical mathematics and physical hardware.</p>
+        </div>
+        <div class="about-cards">
+          <div class="info-card">
+            <strong>MEng Graduate</strong>
+            <span>King's College London</span>
+          </div>
+          <div class="info-card">
+            <strong>Mechatronics</strong>
+            <span>Hardware & Software Integration</span>
+          </div>
+          <div class="info-card">
+            <strong>Medical Focus</strong>
+            <span>Robotics, wearables, simulation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section section-work">
+      <div class="section-inner">
         
-        <div class="projects-showcase">
-          <article class="project-item" data-project="0">
-            <div class="project-content">
-              <span class="project-tag">Web • Full Stack • API</span>
+        <div class="section-header" style="position: relative; z-index: 20;">
+          <h2>Selected work</h2>
+          <p>Academic research, engineering prototypes, and professional contract projects.</p>
+        </div>
+
+        <div class="project-grid" style="margin-top: 8rem; position: relative; z-index: 10; clear: both;">
+          
+          <article class="project-card">
+            <div class="project-image"><img src="ppt_images/slide1_shape1.png" alt="Unlimit Hosting" /></div>
+            <div class="project-copy">
+              <span class="project-label">Web Development · Contract</span>
               <h3>Unlimit Hosting Revamp</h3>
-              <p>Modernized a long-running hosting provider with AI utilities, service plan clarity, and stronger security.</p>
-              <a href="projects/unlimit-hosting.html" class="project-link">View Project →</a>
-            </div>
-            <div class="project-image-wrapper">
-              <img src="ppt_images/slide1_shape1.png" alt="Unlimit Hosting" />
+              <p>Completed a 3-month contract project to modernize a web hosting provider with clearer service plans, AI utilities, and security upgrades to improve user conversions.</p>
+              <a href="projects/unlimit-hosting.html">Read project</a>
             </div>
           </article>
 
-          <article class="project-item" data-project="1">
-            <div class="project-content">
-              <span class="project-tag">Robotics • Medical • Simulation</span>
+          <article class="project-card">
+            <div class="project-image"><img src="ppt_images/slide3_shape5.png" alt="Image-Guided Navigation" /></div>
+            <div class="project-copy">
+              <span class="project-label">Robotics · Medical · Simulation</span>
               <h3>Image-Guided Navigation</h3>
-              <p>Simulation pipeline for surgical robotics electrode insertion with anatomy-aware safety constraints.</p>
-              <a href="projects/image-guided-navigation.html" class="project-link">View Project →</a>
-            </div>
-            <div class="project-image-wrapper">
-              <img src="ppt_images/slide3_shape3.png" alt="Image-Guided Navigation" />
+              <p>Designed a surgical robotics workflow for safe electrode trajectory planning, using 3D Slicer, OpenIGTLink, and ROS2 for anatomy-aware path execution.</p>
+              <a href="projects/image-guided-navigation.html">Read project</a>
             </div>
           </article>
 
-          <article class="project-item" data-project="2">
-            <div class="project-content">
-              <span class="project-tag">Wearable • Sensors • Embedded</span>
+          <article class="project-card">
+            <div class="project-image"><img src="ppt_images/slide4_shape3.png" alt="Smart Insole" /></div>
+            <div class="project-copy">
+              <span class="project-label">Wearable · Sensors · Embedded</span>
               <h3>Low-Cost Smart Insole</h3>
-              <p>Wearable sensor prototype for physical activity monitoring and gait event classification.</p>
-              <a href="projects/low-cost-smart-insole.html" class="project-link">View Project →</a>
-            </div>
-            <div class="project-image-wrapper">
-              <img src="ppt_images/slide4_shape2.jpg" alt="Smart Insole" />
+              <p>Built a wearable insole prototype that measures gait and classifies physical activity while preserving natural biomechanics and affordability.</p>
+              <a href="projects/low-cost-smart-insole.html">Read project</a>
             </div>
           </article>
 
-          <article class="project-item" data-project="3">
-            <div class="project-content">
-              <span class="project-tag">Wearable • IoT • Analytics</span>
+          <article class="project-card">
+            <div class="project-image"><img src="ppt_images/slide6_shape2.png" alt="Smart Knee Sleeve" /></div>
+            <div class="project-copy">
+              <span class="project-label">Wearable · IoT · Biomechanics</span>
               <h3>Smart Knee Sleeve</h3>
-              <p>IMU-based knee wearable with wireless logging and Grafana dashboards for motion tracking.</p>
-              <a href="projects/smart-knee-sleeve.html" class="project-link">View Project →</a>
-            </div>
-            <div class="project-image-wrapper">
-              <img src="ppt_images/slide6_shape2.png" alt="Smart Knee Sleeve" />
+              <p>Developed an IoT knee wearable with IMU sensing, a dual-core FreeRTOS architecture, and clinical gait lab evaluation for osteoarthritis management.</p>
+              <a href="projects/smart-knee-sleeve.html">Read project</a>
             </div>
           </article>
 
-          <article class="project-item" data-project="4">
-            <div class="project-content">
-              <span class="project-tag">Mechatronics • Control • Firmware</span>
+          <article class="project-card">
+            <div class="project-image"><img src="ppt_images/slide8_shape2.png" alt="Parallel Drawing Robot" /></div>
+            <div class="project-copy">
+              <span class="project-label">Mechatronics · Control · Firmware</span>
               <h3>Parallel Drawing Robot</h3>
-              <p>Two-motor drawing robot with MATLAB control, firmware, and encoder feedback for accurate path execution.</p>
-              <a href="projects/parallel-drawing-robot.html" class="project-link">View Project →</a>
-            </div>
-            <div class="project-image-wrapper">
-              <img src="ppt_images/slide8_shape4.png" alt="Drawing Robot" />
+              <p>Created a 2-DOF drawing robot with MATLAB kinematics, PID feedback, and Arduino control for surgical robotics research.</p>
+              <a href="projects/parallel-drawing-robot.html">Read project</a>
             </div>
           </article>
 
-          <article class="project-item" data-project="5">
-            <div class="project-content">
-              <span class="project-tag">Computer Vision • AI • Unity</span>
+          <article class="project-card">
+            <div class="project-image"><img src="ppt_images/slide10_shape4.png" alt="Motion Comparison" /></div>
+            <div class="project-copy">
+              <span class="project-label">Computer Vision · AI · Research</span>
               <h3>Motion Comparison System</h3>
-              <p>Comparative motion analysis using depth cameras, pose tracking, and similarity scoring.</p>
-              <a href="projects/motion-comparison.html" class="project-link">View Project →</a>
-            </div>
-            <div class="project-image-wrapper">
-              <img src="ppt_images/slide10_shape7.png" alt="Motion Comparison" />
+              <p>Built a system to quantify lecturer synchronicity using depth tracking and pose analysis.</p>
+              <a href="projects/motion-comparison.html">Read project</a>
             </div>
           </article>
 
-          <article class="project-item" data-project="6">
-            <div class="project-content">
-              <span class="project-tag">Simulation • FEA • Modeling</span>
+          <article class="project-card">
+            <div class="project-image"><img src="ppt_images/slide11_shape2.png" alt="Heart Finite Element Model" /></div>
+            <div class="project-copy">
+              <span class="project-label">Simulation · FEA · Biomedical</span>
               <h3>Heart Finite Element Model</h3>
-              <p>Finite element simulation of blood velocity and pressure in the heart with mesh fidelity analysis.</p>
-              <a href="projects/finite-elements-heart-model.html" class="project-link">View Project →</a>
-            </div>
-            <div class="project-image-wrapper">
-              <img src="ppt_images/slide11_shape3.png" alt="Heart Model" />
+              <p>Simulated aortic valve stenosis using finite elements to quantify pressure drop and mesh convergence for personalized treatment planning.</p>
+              <a href="projects/finite-elements-heart-model.html">Read project</a>
             </div>
           </article>
+          
         </div>
       </div>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section class="section skills-section">
-      <div class="section-container">
-        <h2 class="section-title">Skills & Stack</h2>
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h4>Frontend</h4>
-            <ul>
-              <li>React / Next.js</li>
-              <li>HTML & CSS</li>
-              <li>JavaScript / TypeScript</li>
-              <li>Three.js / WebGL</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h4>Backend</h4>
-            <ul>
-              <li>Node.js</li>
-              <li>Python</li>
-              <li>Database Design</li>
-              <li>API Development</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h4>Hardware & Embedded</h4>
-            <ul>
-              <li>Robotics</li>
-              <li>Embedded Systems</li>
-              <li>MATLAB / Simulink</li>
-              <li>Wearable Design</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h4>Tools & Methods</h4>
-            <ul>
-              <li>Git & GitHub</li>
-              <li>UI/UX Design</li>
-              <li>Motion Design</li>
-              <li>Agile Development</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="section contact-section">
-      <div class="section-container">
-        <div class="contact-content">
-          <h2 class="section-title">Let's create something<br />extraordinary together</h2>
-          <p class="contact-subtitle">Have an idea? Let's talk about how we can bring it to life.</p>
-          <div class="contact-methods">
-            <a href="mailto:kenton@example.com" class="contact-link">
-              <span>Email</span>
-              <span>→</span>
-            </a>
-            <a href="https://github.com/kentonleung" target="_blank" rel="noreferrer" class="contact-link">
-              <span>GitHub</span>
-              <span>→</span>
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="contact-link">
-              <span>LinkedIn</span>
-              <span>→</span>
-            </a>
-          </div>
+    <section id="contact" class="section section-contact">
+      <div class="section-inner">
+        <h2>Contact</h2>
+        <div class="contact-grid">
+          <a href="mailto:leungdikchun@gmail.com">leungdikchun@gmail.com</a>
+          <a href="https://github.com/kentonleung" target="_blank" rel="noreferrer">github.com/kentonleung</a>
+          <a href="https://www.linkedin.com/in/kenton-leung/" target="_blank" rel="noreferrer">linkedin.com/in/kenton-leung</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-container">
-      <p>© 2026 Kenton Leung. All rights reserved.</p>
-      <p>Built with passion, code, and imagination.</p>
-    </div>
+  <footer class="site-footer">
+    <p>© 2026 Kenton Leung • Biomedical engineering, robotics, wearable systems, machine learning, web development.</p>
+    <p style="font-size: 0.8rem; color: #888; margin-top: 0.5rem;">
+      This portfolio was architected using AI-assisted workflows, leveraging Model Context Protocols (MCP) for automated document extraction within and pushed to GitHub via VS Code.
+    </p>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
